@@ -21,7 +21,6 @@ public:
 
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *event);
-    void drawAxis();
 
 private slots:
     void on_showButton_clicked();
@@ -30,7 +29,7 @@ private slots:
 
     void on_drawPointButton_clicked();
 
-    void on_fenceButton_clicked();
+//    void on_fenceButton_clicked();
 
     void on_quitButton_clicked();
 

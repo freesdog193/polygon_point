@@ -66,13 +66,13 @@ void Widget::paintEvent(QPaintEvent *)
         pJPoint.drawEllipse(QPointF(mousePosX, mousePosY), 5, 5);
         showJudgePoint = false;
     }
-    if(showFence)
-    {
-        QPainter pFence(&pix);
-        pFence.setPen(QPen(Qt::blue, 3));
-        pFence.drawPolygon(judger.GetFence());
-        showFence = false;
-    }
+//    if(showFence)
+//    {
+//        QPainter pFence(&pix);
+//        pFence.setPen(QPen(Qt::blue, 3));
+//        pFence.drawPolygon(judger.GetFence());
+//        showFence = false;
+//    }
     painter.drawPixmap(20, 20, pix);
     painter.setPen(QPen(Qt::gray, 4));
     painter.drawLine(20, 20, 580, 20);
@@ -127,7 +127,7 @@ void Widget::on_showButton_clicked()
 void Widget::on_clearButton_clicked()
 {
     judger.ClearPolygons();
-    judger.ClearFence();
+//    judger.ClearFence();
     QPixmap clearPix = QPixmap(560, 560);
     clearPix.fill(Qt::white);
     pix = clearPix;
@@ -142,17 +142,13 @@ void Widget::on_drawPointButton_clicked()
     this->update();
 }
 
-void Widget::on_fenceButton_clicked()
-{
-    judger.CreateFence();
-    showFence = true;
-    this->update();
-}
+//void Widget::on_fenceButton_clicked()
+//{
+//    judger.CreateFence();
+//    showFence = true;
+//    this->update();
+//}
 
-void Widget::drawAxis()
-{
-
-}
 
 void Widget::on_quitButton_clicked()
 {

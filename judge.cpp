@@ -17,8 +17,8 @@ void Judge::ClearPolygons()
 
 bool Judge::JudgePoint(QPoint point)
 {
-    if(fencePolygon.containsPoint(point, Qt::WindingFill))
-        return true;
+//    if(fencePolygon.containsPoint(point, Qt::WindingFill))
+//        return true;
     for(auto iter = polygons.begin(); iter != polygons.end(); ++iter)
     {
         QPolygon py = *iter;
@@ -29,32 +29,32 @@ bool Judge::JudgePoint(QPoint point)
     return false;
 }
 
-void Judge::CreateFence()
-{
-    for(auto iter = polygons.begin(); iter != polygons.end(); ++iter)
-    {
-        QPolygon py = *iter;
-        double x = 0;
-        double y = 0;
-        for(auto it = py.begin(); it != py.end(); ++it)
-        {
-            QPoint point = *it;
-            x += point.x();
-            y += point.y();
-        }
-        x /= py.size();
-        y /= py.size();
+//void Judge::CreateFence()
+//{
+//    for(auto iter = polygons.begin(); iter != polygons.end(); ++iter)
+//    {
+//        QPolygon py = *iter;
+//        double x = 0;
+//        double y = 0;
+//        for(auto it = py.begin(); it != py.end(); ++it)
+//        {
+//            QPoint point = *it;
+//            x += point.x();
+//            y += point.y();
+//        }
+//        x /= py.size();
+//        y /= py.size();
 
-        fencePolygon.push_back(QPoint(x, y));
-    }
-}
+//        fencePolygon.push_back(QPoint(x, y));
+//    }
+//}
 
-void Judge::ClearFence()
-{
-    fencePolygon.clear();
-}
+//void Judge::ClearFence()
+//{
+//    fencePolygon.clear();
+//}
 
-QPolygon Judge::GetFence()
-{
-    return fencePolygon;
-}
+//QPolygon Judge::GetFence()
+//{
+//    return fencePolygon;
+//}
